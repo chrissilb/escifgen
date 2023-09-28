@@ -1,3 +1,3 @@
 # escifgen
 
-Maven Plugin to generate Java interfaces for the esc component framework
+Maven Plugin to generate Java interfaces for the ESC component framework
