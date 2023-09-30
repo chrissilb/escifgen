@@ -14,7 +14,8 @@ import de.gwasch.code.escframework.components.utils.CodeGenerator;
 public class InterfaceGenerationMojo extends AbstractMojo {
 
 	private final static String DEFAULT_INPUT_FOLDER = "src/main/java";
-	private final static String DEFAULT_OUTPUT_FOLDER = "src/main/resources";
+//	private final static String DEFAULT_OUTPUT_FOLDER = "src/main/resources";
+	private final static String DEFAULT_OUTPUT_FOLDER = "target/generated-sources";
 
 	@Parameter(property = "systeminfo.inputFolder", defaultValue = DEFAULT_INPUT_FOLDER)
 	private String inputFolder;
