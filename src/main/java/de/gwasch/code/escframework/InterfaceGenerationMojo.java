@@ -42,6 +42,7 @@ public class InterfaceGenerationMojo extends AbstractMojo {
 		try {
 			CodeGenerator generator = new CodeGenerator(inputFolder, basePackageName, outputFolder);
 			generator.generateInterfaces();
+			project.addCompileSourceRoot(outputFolder);
 			
 			String[] lines = baos.toString().split(System.lineSeparator());
 			for (String line : lines) {
