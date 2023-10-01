@@ -11,12 +11,8 @@
 	
 	<developers>
 		<developer>
-	    	<id>chsi</id>
 	      	<name>Christian Silberbauer</name>
 	      	<email>christian.silberbauer@gwasch.de</email>
-	      	<properties>
-	        	<active>true</active>
-	      	</properties>
 		</developer>
 	</developers>
   
