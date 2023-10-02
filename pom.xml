@@ -6,8 +6,8 @@
 	<version>1.0.0</version>
 	
 	<name>escifgen</name>
-<!--	<url>http://gwasch.de</url>-->
-	<url>http://maven.apache.org</url>
+	<url>http://gwasch.de</url>
+<!--	<url>http://maven.apache.org</url>-->
 	
 	<developers>
 		<developer>
