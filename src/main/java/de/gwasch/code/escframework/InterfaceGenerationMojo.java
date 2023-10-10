@@ -4,26 +4,26 @@ import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
 import org.apache.maven.plugin.AbstractMojo;
+import org.apache.maven.plugins.annotations.LifecyclePhase;
 import org.apache.maven.plugins.annotations.Mojo;
 import org.apache.maven.plugins.annotations.Parameter;
 import org.apache.maven.project.MavenProject;
 
 import de.gwasch.code.escframework.components.utils.CodeGenerator;
 
-@Mojo(name = "ifgen")
+@Mojo(name = "ifgen", defaultPhase = LifecyclePhase.GENERATE_SOURCES)
 public class InterfaceGenerationMojo extends AbstractMojo {
 
 	private final static String DEFAULT_INPUT_FOLDER = "src/main/java";
-//	private final static String DEFAULT_OUTPUT_FOLDER = "src/main/resources";
 	private final static String DEFAULT_OUTPUT_FOLDER = "target/generated-sources";
 
-	@Parameter(property = "systeminfo.inputFolder", defaultValue = DEFAULT_INPUT_FOLDER)
+	@Parameter(property = "inputFolder", defaultValue = DEFAULT_INPUT_FOLDER)
 	private String inputFolder;
 
-	@Parameter(property = "systeminfo.basePackageName")
+	@Parameter(property = "basePackageName")
 	private String basePackageName;
 
-	@Parameter(property = "systeminfo.outputFolder", defaultValue = DEFAULT_OUTPUT_FOLDER)
+	@Parameter(property = "outputFolder", defaultValue = DEFAULT_OUTPUT_FOLDER)
 	private String outputFolder;
 	
     @Parameter( readonly = true, defaultValue = "${project}" )
