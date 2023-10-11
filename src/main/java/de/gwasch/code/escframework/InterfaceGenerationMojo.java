@@ -1,7 +1,9 @@
 package de.gwasch.code.escframework;
 
 import java.io.ByteArrayOutputStream;
+import java.io.File;
 import java.io.PrintStream;
+import java.nio.file.Path;
 
 import org.apache.maven.plugin.AbstractMojo;
 import org.apache.maven.plugins.annotations.LifecyclePhase;
@@ -34,22 +36,25 @@ public class InterfaceGenerationMojo extends AbstractMojo {
 		if (basePackageName == null) {
 			basePackageName = project.getGroupId();
 		}
-
+		
+		Path inputPath = project.getBasedir().toPath().resolve(inputFolder);
+		Path outputPath = project.getBasedir().toPath().resolve(outputFolder);
+		
 		ByteArrayOutputStream baos = new ByteArrayOutputStream();
 		PrintStream pos = new PrintStream(baos);
 		System.setOut(pos);
 				
 		try {
-			CodeGenerator generator = new CodeGenerator(inputFolder, basePackageName, outputFolder);
+			CodeGenerator generator = new CodeGenerator(inputPath, basePackageName, outputPath);
 			generator.generateInterfaces();
-			project.addCompileSourceRoot(outputFolder);
+//			project.addCompileSourceRoot(outputFolder);
 			
 			String[] lines = baos.toString().split(System.lineSeparator());
 			for (String line : lines) {
 				getLog().info(line);
 			}
 		}
-		catch(Throwable t) {
+		catch (Throwable t) {
 			String[] lines = baos.toString().split(System.lineSeparator());
 			for (String line : lines) {
 				getLog().info(line);
@@ -58,7 +63,7 @@ public class InterfaceGenerationMojo extends AbstractMojo {
 			getLog().error(t);
 		}
 		
-		project.addCompileSourceRoot(outputFolder);
+//		project.addCompileSourceRoot(outputFolder);
 	}
 
 	public void execute() {

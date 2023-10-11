@@ -4,13 +4,13 @@
   	<parent>
 	    <groupId>de.gwasch.code.parent</groupId>
 	    <artifactId>parent</artifactId>
-	    <version>1.0.0</version>
+	    <version>0.0.1-SNAPSHOT</version>
   	</parent>
 	
 	<groupId>de.gwasch.code.escframework</groupId>
 	<artifactId>escifgen</artifactId>
 	<packaging>maven-plugin</packaging>
-	<version>1.0.0</version>
+	<version>0.0.1-SNAPSHOT</version>
 	
 	<name>escifgen</name>
 	<description>Maven plugin to generate interfaces for the ESC component framework</description>
