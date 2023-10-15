@@ -1,21 +1,24 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	
-  	<parent>
-	    <groupId>de.gwasch.code.parent</groupId>
-	    <artifactId>parent</artifactId>
-	    <version>0.0.2</version>
-  	</parent>
-	
+
+	<parent>
+		<groupId>de.gwasch.code.parent</groupId>
+		<artifactId>parent</artifactId>
+		<version>0.0.2</version>
+	</parent>
+
 	<groupId>de.gwasch.code.escframework</groupId>
 	<artifactId>escifgen</artifactId>
 	<packaging>maven-plugin</packaging>
 	<version>0.0.2</version>
-	
+
 	<name>escifgen</name>
-	<description>Maven plugin to generate interfaces for the ESC component framework</description>
+	<description>Maven plugin to generate interfaces for the ESC component
+		framework</description>
 	<url>http://gwasch.de</url>
-	
+
 	<developers>
 		<developer>
 			<name>Christian Silberbauer</name>
@@ -29,7 +32,18 @@
 			<url>http://www.opensource.org/licenses/mit-license.php</url>
 		</license>
 	</licenses>
-	
+
+	<issueManagement>
+		<system>GitHub issues</system>
+		<url>https://github.com/chrissilb/${project.artifactId}</url>
+	</issueManagement>
+
+	<scm>
+		<connection>scm:git:git@github.com:chrissilb/${project.artifactId}.git</connection>
+		<developerConnection>scm:git:git@github.com:chrissilb/${project.artifactId}.git</developerConnection>
+		<url>http://github.com/chrissilb/${project.artifactId}</url>
+	</scm>
+
 	<dependencies>
 		<dependency>
 			<groupId>de.gwasch.code.escframework</groupId>
@@ -49,10 +63,10 @@
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
-		    <groupId>org.apache.maven</groupId>
-		    <artifactId>maven-core</artifactId>
-		    <version>3.9.4</version>
-		    <scope>provided</scope>
+			<groupId>org.apache.maven</groupId>
+			<artifactId>maven-core</artifactId>
+			<version>3.9.4</version>
+			<scope>provided</scope>
 		</dependency>
 	</dependencies>
 	<build>
